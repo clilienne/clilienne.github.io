@@ -1,0 +1,28 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Optional: Add a background color */
+}
+
+#typed-text {
+    font-size: 50px;
+    color: #333;
+    text-align: center;
+    white-space: nowrap; /* Prevent line breaks for the typing effect */
+    overflow: hidden; /* Hide overflow to create the typing effect */
+    border-right: 2px solid #333; /* Simulate the cursor */
+    animation: typing 1s steps(40) forwards; /* Typing animation */
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
