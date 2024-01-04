@@ -1,49 +1,161 @@
 document.addEventListener('DOMContentLoaded', function () {
     var typedText = document.getElementById('typed-text');
+
+    var imageContainer = document.getElementById('image-container');
+    var imageContainer1 = document.getElementById('image-container-1');
+    var imageContainer3 = document.getElementById('image-container-3');
+    var imageContainer4 = document.getElementById('lilienne');
+    var imageContainer5 = document.getElementById('veille');
     var backgroundMusic = document.getElementById('background-music');
     var messages = [
         "Hi, Lilienne.",
-        "Before year endss..."
+        "As the year comes to a close,",
+        "there's something I want to share with you.",
+        "Sit tight and relax po hehe.",
+        "So... this is me before we meet.",
+        "pogi ba...",
+        "paano pa kaya yung naglalaro? joke 😝",
+        "...",
+        "But then, we met,",
+        "and everything changed.",
+        "...",
+        "This is you on the first day we met",
+
+
+        "gandaaaaaaaaaaaaaaaa! 💜",
+        "pero hindi ako magpapatalo, eto yung sa 'kin hehe",
+        "pogi noooooo? HAHAHAHAHAHAHA",
+        "may napansin ka ba?",
+        "yung couple shirt 😝",
+
+        
+        
     ];
 
-    // Function to simulate typing effect
+    backgroundMusic.volume = 1;
+
     function typeWriter(text, index, callback) {
         if (index < text.length) {
             typedText.innerHTML += text.charAt(index);
             index++;
             setTimeout(function () {
                 typeWriter(text, index, callback);
-            }, 50); // Adjust the typing speed (milliseconds per character)
+            }, 60);
         } else {
-            // After typing, you can perform any additional actions or callbacks
             if (callback) {
-                setTimeout(callback, 1500); // Adjust the delay before starting the next message
+                setTimeout(callback, 1500);
             }
         }
     }
 
-    // Function to clear the typed text
     function clearText() {
         typedText.innerHTML = '';
     }
 
-    // Start the typing effect with the first message after 3 seconds
+    function showImageAndMessages(imageContainer, nextCallback) {
+        typedText.style.display = 'none';
+        imageContainer.style.display = 'block';
+        setTimeout(function () {
+            imageContainer.style.display = 'none';
+            typedText.style.display = 'block';
+            if (nextCallback) {
+                nextCallback();
+            }
+        }, 3000);
+    }
+
     setTimeout(function () {
+        backgroundMusic.play();
         typeWriter(messages[0], 0, function () {
-            // Start playing the background music
-            backgroundMusic.play();
-
-            // Clear the text after a delay
-            setTimeout(clearText, 1500);
-
-            // Start typing the second message after clearing
+            clearText();
             setTimeout(function () {
                 typeWriter(messages[1], 0, function () {
-                    // You can continue adding more messages and actions as needed
-                    // For example, clear the text after the second message
-                    setTimeout(clearText, 1500);
+                    clearText();
+                    setTimeout(function () {
+                        typeWriter(messages[2], 0, function () {
+                            clearText();
+                            setTimeout(function () {
+                                typeWriter(messages[3], 0, function () {
+                                    clearText();
+                                    setTimeout(function () {
+                                        typeWriter(messages[4], 0, function () {
+                                            clearText();
+                                            showImageAndMessages(imageContainer, function () {
+                                                showImageAndMessages(imageContainer1, function () {
+                                                    showImageAndMessages(imageContainer3, function () {
+                                                        typeWriter(messages[5], 0, function () {
+                                                            clearText();
+                                                            setTimeout(function () {
+                                                                typeWriter(messages[6], 0, function () {
+                                                                    clearText();
+                                                                    setTimeout(function () {
+                                                                        typeWriter(messages[7], 0, function () {
+                                                                            clearText();
+                                                                            setTimeout(function () {
+                                                                                typeWriter(messages[8], 0, function () {
+                                                                                    clearText();
+                                                                                    setTimeout(function () {
+                                                                                        typeWriter(messages[9], 0, function () {
+                                                                                            clearText();
+                                                                                            setTimeout(function () {
+                                                                                                typeWriter(messages[10], 0, function () {
+                                                                                                    clearText();
+                                                                                                    setTimeout(function () {
+                                                                                                        typeWriter(messages[11], 0, function () {
+                                                                                                            clearText();
+                                                                                                            showImageAndMessages(imageContainer4, function () {
+                                                                                                                setTimeout(function () {
+                                                                                                                    typeWriter(messages[12], 0, function () {
+                                                                                                                        clearText();
+                                                                                                                        setTimeout(function () {
+                                                                                                                            typeWriter(messages[13], 0, function () {
+                                                                                                                                clearText();
+                                                                                                                                showImageAndMessages(imageContainer5, function () {
+                                                                                                                                    setTimeout(function () {
+                                                                                                                                        typeWriter(messages[14], 0, function () {
+                                                                                                                                            clearText();
+                                                                                                                                            setTimeout(function () {
+                                                                                                                                                typeWriter(messages[15], 0, function () {
+                                                                                                                                                    clearText();
+                                                                                                                                                    setTimeout(function () {
+                                                                                                                                                        typeWriter(messages[16], 0, function () {
+                                                                                                                                                            // Continue the pattern for additional messages
+                                                                                                                                                        });
+                                                                                                                                                    }, 800);
+                                                                                                                                                });
+                                                                                                                                            }, 300);
+                                                                                                                                        });
+                                                                                                                                    }, 300);
+                                                                                                                                });
+                                                                                                                            });
+                                                                                                                        }, 1300);
+                                                                                                                    });
+                                                                                                                }, 1300);
+                                                                                                            });
+                                                                                                        });
+                                                                                                    }, 1300);
+                                                                                                });
+                                                                                            }, 1300);
+                                                                                        });
+                                                                                    }, 1300);
+                                                                                });
+                                                                            }, 1300);
+                                                                        });
+                                                                    }, 1300);
+                                                                });
+                                                            }, 1300);
+                                                        });
+                                                    });
+                                                });
+                                            });
+                                        });
+                                    }, 1300);
+                                });
+                            }, 1300);
+                        });
+                    }, 1300);
                 });
-            }, 1500);
+            }, 1300);
         });
-    }, 3000); // 3000 milliseconds (3 seconds) delay before starting the typing effect
+    }, 3000);       
 });
